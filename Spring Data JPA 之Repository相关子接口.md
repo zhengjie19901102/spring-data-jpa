@@ -60,12 +60,12 @@ getTotalPages | 全部数据合起来可分的总页数
 方法名 | 解释
 ---|---
 findAll(Sort sort) | 查询出所有数据并排序
-save(Iterable\<S\> entities) | 批量保存数据
+save(Iterable entities) | 批量保存数据
 flush | 将缓存中的数据与数据库同步`其实就是把一级或二级缓存数据存入数据库中。单不会立即存入，当commit事务提交后才会正式持久化 `
 saveAndFlush(S entity) | 类似于JPA中的merge方法`如果传入有ID的实体类则会先查询，如果存在则更新，如果不存在则存入。如果传入的没有ID的实体类，则直接存入。`
 deleteInBatch | 批量删除集合中的实体
 deleteAllInBatch | 批量删除所有数据
-findAll(Example\<S\> example) | 待条件查询所有数据
+findAll(Example example) | 待条件查询所有数据
 
 
 
