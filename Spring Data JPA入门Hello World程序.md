@@ -81,6 +81,6 @@ spring配置文件中内容如下(加入了基于aop事务的相关配置):
 	<jpa:repositories base-package="com.ieb.dao" entity-manager-factory-ref="entityManagerFactory"></jpa:repositories>
 </beans>
 ```
-
+`声明的spring data 接口需要继承Repository<T, ID extends Serializable>接口`
 
 
