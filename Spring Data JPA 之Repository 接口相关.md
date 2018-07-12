@@ -46,32 +46,32 @@ findByLastNameAndFirstName(String lastName,String firstName); 
 
 关键字 | 简单示例 | JPQL片段示例
 -----|------|--------
-AND|	findByLastNameAndFirstName | WHERE Entity.lastName = ? AND Entity.firstName = ?
-OR | readByLastNameOrFirstName | WHERE Entity.lastName = ? OR Entity.firstName = ?
-Between | getByStartDateBetween | WHERE Entity.startDate BETWEEN ? AND ?
-LessThan | findByAgeLessThan | WHERE Entity.age < ?
-GreaterThan | readByAgeGreaterThan | WHERE Entity.age > ?
-After`只作用在时间` | findByStartDateAfter | WHERE Entity.startDate > ? 
-Before`只作用在时间` | findByStartDateBefore | WHERE Entity.startDate < ?
-LessThanEqual | findByAgeLessThenEqual | WHERE Entity.age <= ?
-GreaterThanEqual | readByAgeGreaterThenEqual | WHERE Entity.age >= ?
-Is | findByLastNameIs | WHERE Entity.lastName = ?
-Equal | getByFirstNameEqual | WHERE Entity.firstName = ?
+AND|	findByLastNameAndFirstName | WHERE Entity.lastName = ?1 AND Entity.firstName = ?2
+OR | readByLastNameOrFirstName | WHERE Entity.lastName = ?1 OR Entity.firstName = ?2
+Between | getByStartDateBetween | WHERE Entity.startDate BETWEEN ?1 AND ?2
+LessThan | findByAgeLessThan | WHERE Entity.age < ?1
+GreaterThan | readByAgeGreaterThan | WHERE Entity.age > ?1
+After`只作用在时间` | findByStartDateAfter | WHERE Entity.startDate > ?1
+Before`只作用在时间` | findByStartDateBefore | WHERE Entity.startDate < ?1
+LessThanEqual | findByAgeLessThenEqual | WHERE Entity.age <= ?1
+GreaterThanEqual | readByAgeGreaterThenEqual | WHERE Entity.age >= ?1
+Is | findByLastNameIs | WHERE Entity.lastName = ?1
+Equal | getByFirstNameEqual | WHERE Entity.firstName = ?1
 IsNull | findByAddressIsNull | WHERE Entity.address is NULL
 IsNotNull | readByAddressIsNotNull | WHERE Entity.address NOT NULL
 NotNull | readByAddressNotNull | WHERE Entity.address NOT NULL
 Like | findByNameLike | WHERE Entity.name LIKE ? `不包括'%'符号`
-Not Like | findByNameNotLike | WHERE Entity.name not like ? `不包括'%'符号`
-StartingWith | readByNameStartingWith | WHERE Entity.name like '?%'`条件以'%'符号结尾`
-EndingWith | readByName EndingWith | WHERE Entity.name like '%?'`条件以'%'符号开头`
-Containing | getByNameContaining | WHERE Entity.name like '%?%' `包含'%'符号`
+Not Like | findByNameNotLike | WHERE Entity.name not like ?1 `不包括'%'符号`
+StartingWith | readByNameStartingWith | WHERE Entity.name like '?1%'`条件以'%'符号结尾`
+EndingWith | readByName EndingWith | WHERE Entity.name like '%?1'`条件以'%'符号开头`
+Containing | getByNameContaining | WHERE Entity.name like '%?1%' `包含'%'符号`
 OrderBy | findByAgeOrderByAddressDesc | WHERE Entity.age = ? Order By Entity.address DESC
-Not | readByAgeNot | WHERE Entity.age <> ? `不等于`
-In | findByNameIn(Collection<T> name) | WHERE Entity.name IN (? ,?, ?)
-NotIn | getByNameNotIn(Collection<T> name)| WHERE Entity.name NOT IN (? ,?, ?)
+Not | readByAgeNot | WHERE Entity.age <> ?1 `不等于`
+In | findByNameIn(Collection<T> name) | WHERE Entity.name IN (?1 ,?2, ?3)
+NotIn | getByNameNotIn(Collection<T> name)| WHERE Entity.name NOT IN (?1 ,?2, ?3)
 True | readByFloagTrue() | WHERE Entity.floag = true
 False | readByFloagFalse() | WHERE Entity.floag = false
-IgnoreCase | findByNameIgnoreCase | WHERE UPPER(Entity.Name) = UPPER(?)
+IgnoreCase | findByNameIgnoreCase | WHERE UPPER(Entity.Name) = UPPER(?1)
 
 
 
